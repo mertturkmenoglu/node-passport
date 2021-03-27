@@ -10,11 +10,26 @@
     "type": "git",
     "url": "git+https://github.com/mertturkmenoglu/node-passport.git"
   },
-  "keywords": ["Node.js", "Passport.js", "Google OAuth"],
+  "keywords": [
+    "Node.js",
+    "Passport.js",
+    "Google OAuth"
+  ],
   "author": "Mert TURKMENOGLU",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mertturkmenoglu/node-passport/issues"
   },
-  "homepage": "https://github.com/mertturkmenoglu/node-passport#readme"
+  "homepage": "https://github.com/mertturkmenoglu/node-passport#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.37",
+    "nodemon": "^2.0.7",
+    "tslint": "^6.1.3"
+  }
 }
