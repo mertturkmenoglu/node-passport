@@ -2,6 +2,7 @@ import express from 'express';
 import passport from 'passport';
 
 import appController from '../controllers';
+import isAuth from "../middlewares/isAuth";
 
 const router = express.Router();
 
@@ -12,7 +13,8 @@ router.get('/auth/google', passport.authenticate('google', {
   scope: ['profile']
 }));
 
-router.get('/auth/logout', (_req, res) => res.send('AUTH_LOGOUT'));
+router.get('/auth/logout', appController.logout);
 router.get('/auth-success', passport.authenticate('google'), appController.getAuthSuccess);
+router.get('/user', isAuth, appController.getUserPage);
 
 export default router;

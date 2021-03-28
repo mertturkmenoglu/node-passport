@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./includes/common-head.ejs') %>
+
+<body>
+<%- include('./includes/navbar.ejs') %>
+<% if(user) { %>
+    <h3>Username: <%= user.username %></h3>
+    <img src="<%= user.image %>" alt="User image">
+<% } %>
+</body>
+
+</html>
