@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import passport from 'passport';
+import mongoose, { ConnectOptions } from 'mongoose';
 
 dotenv.config();
 
@@ -14,6 +15,15 @@ const PORT = process.env.PORT || 5000;
 
 app.set('view engine', 'ejs');
 app.set('views', 'src/views');
+
+const mongooseOptions: ConnectOptions = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+};
+
+mongoose.connect(process.env.MONGO_URI, mongooseOptions, () => {
+  console.log('Connected to MongoDB');
+});
 
 app.use(routes);
 

@@ -6,6 +6,11 @@ const strategyOptions: StrategyOptions = {
   callbackURL: '/auth-success',
 };
 
-const googleStrategy = new GoogleStrategy(strategyOptions, () => {});
+const googleStrategy = new GoogleStrategy(
+  strategyOptions,
+  (_accessToken, _refreshToken, profile, done) => {
+    
+  }
+);
 
 export default googleStrategy;

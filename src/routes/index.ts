@@ -13,6 +13,6 @@ router.get('/auth/google', passport.authenticate('google', {
 }));
 
 router.get('/auth/logout', (_req, res) => res.send('AUTH_LOGOUT'));
-router.get('/auth-success', appController.getAuthSuccess);
+router.get('/auth-success', passport.authenticate('google'), appController.getAuthSuccess);
 
 export default router;
