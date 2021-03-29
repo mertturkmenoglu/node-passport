@@ -13,8 +13,13 @@ router.get('/auth/google', passport.authenticate('google', {
   scope: ['profile']
 }));
 
+router.get('/auth/github', passport.authenticate('github', {
+  scope: ['profile'],
+}));
+
 router.get('/auth/logout', appController.logout);
 router.get('/auth-success', passport.authenticate('google'), appController.getAuthSuccess);
+router.get('/auth/github-callback', passport.authenticate('github'), appController.getGithubCallback);
 router.get('/user', isAuth, appController.getUserPage);
 
 export default router;

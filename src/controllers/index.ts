@@ -24,6 +24,10 @@ const getAuthSuccess = (_req: Request, res: Response) => {
     return res.redirect('/user');
 }
 
+const getGithubCallback = (_req: Request, res: Response) => {
+  return res.redirect('/user');
+}
+
 const logout = (req: Request, res: Response) => {
     req.logout();
     res.redirect('/');
@@ -45,4 +49,5 @@ export default {
     getAuthSuccess,
     logout,
     getUserPage,
+    getGithubCallback,
 };

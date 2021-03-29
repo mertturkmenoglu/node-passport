@@ -7,10 +7,11 @@ import cookieSession from 'cookie-session';
 dotenv.config();
 
 import routes from './routes';
-import googleStrategy from './config/passport';
+import {googleStrategy, githubStrategy} from './config/passport';
 import User from "./models/User";
 
 passport.use(googleStrategy);
+passport.use(githubStrategy);
 
 passport.serializeUser((user, done) => {
   done(null, (user as any).id);
